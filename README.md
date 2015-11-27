@@ -69,3 +69,12 @@ cmd+w   关闭当前的 tab
 cmd+{   前一个 tab
 cmd+}   后一个 tab
 NerdTree 在 .vimrc 中的常用配置
+
+#### 设置nerdtree宽度
+let NERDTreeWinSize=22
+
+## tagbar设置
+#### 设置tagbar快捷键
+map tb: TagbarToggle<CR>
+#### 设置启动时自动focus
+let g:tagbar_autofocus = 1
