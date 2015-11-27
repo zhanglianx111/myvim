@@ -159,7 +159,11 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 
 " NERDTree
+"autocmd VimEnter * NERDTree "启动Vim时自动打开nerdtree
+let NERDTreeShowBookmarks=0 "一直显示书签
+let NERDTreeChDirMode=2 "打开书签时，自动将Vim的pwd设为打开的目录，如果你的项目有tags文件，你会发现这个命令很有帮助
 let NERDTreeIgnore=['\.pyc', '\.out$', 'bak$', 'node_modules', 'dist']
+map <F1> :NERDTreeToggle<CR>
 
 " YCM
 nnoremap <buffer> <silent> gd :YcmCompleter GoTo<cr>
