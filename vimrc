@@ -1,4 +1,6 @@
 set nocompatible              " be iMproved, required
+set nobackup
+set noswapfile
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -34,7 +36,7 @@ Plugin 'elzr/vim-json'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Shougo/vimproc.vim'
-
+Plugin 'vim-script/winmanager'
 " All of your Plugins must be added before the following line
 call vundle#end() " required
 filetype plugin indent on " required
@@ -156,14 +158,46 @@ let g:startify_custom_header = [
 
 " Tagbar
 let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
-
+let g:tagbar_autoclose = 0
+map tb :TagbarToggle<CR>
+" 启动时自动focus
+let g:tagbar_autofocus = 1
+let g:tagbar_width=25
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
 " NERDTree
 "autocmd VimEnter * NERDTree "启动Vim时自动打开nerdtree
 let NERDTreeShowBookmarks=0 "一直显示书签
 let NERDTreeChDirMode=2 "打开书签时，自动将Vim的pwd设为打开的目录，如果你的项目有tags文件，你会发现这个命令很有帮助
 let NERDTreeIgnore=['\.pyc', '\.out$', 'bak$', 'node_modules', 'dist']
-map <F1> :NERDTreeToggle<CR>
+"let g:NERDTreeWidth=9
+let NERDTreeWinSize=25
+map nt :NERDTreeToggle<CR>
 
 " YCM
 nnoremap <buffer> <silent> gd :YcmCompleter GoTo<cr>
@@ -202,3 +236,40 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_html_checkers = ["jshint"]
 let g:syntastic_shell = "/bin/sh"
 
+" winmanager
+"map <c-w><c-f> :FirstExplorerWindow<cr> 
+"map <c-w><c-b> :BottomExplorerWindow<cr> 
+"map <c-w><c-t> :WMToggle<cr> 
+nmap wm :WMToggle<cr>
+
+ 
+
+"下面的代码放到自己的vimrc配置中即可"
+ 
+"let g:winManagerWindowLayout='NERDTree|Tagbar'
+"let g:winManagerWidth=30
+"let g:AutoOpenWinManager = 1 "这里要配合修改winmanager.vim文件，见下方说明"
+ 
+"let g:NERDTree_title = "[NERDTree]"
+"function! NERDTree_Start()
+"    exe 'q' "执行一个退出命令，关闭自动出现的窗口"
+"    exe 'NERDTree'
+"endfunction
+ 
+"function! NERDTree_IsValid()
+"    return 1
+"endfunction
+ 
+"noremap <f5> :NERDTreeFind<cr>
+ "执行一个退出命令，关闭自动出现的窗口"
+
+"let g:Tagbar_title = "[Tagbar]"
+"function! Tagbar_Start()
+"    exe 'q'
+"    exe 'TagbarOpen'
+"endfunction
+ 
+"function! Tagbar_IsValid()
+"    return 1
+"endfunction
+"let g:tagbar_vertical = 30
