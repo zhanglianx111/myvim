@@ -57,20 +57,28 @@ let NERDTreeShowBookmarks=1
 |?|       切换是否显示 Quick Help
 
 ### 切换标签页
-:tabnew [++opt选项] ［＋cmd］ 文件      建立对指定文件新的tab
-:tabc   关闭当前的 tab
-:tabo   关闭所有其他的 tab
-:tabs   查看所有打开的 tab
-:tabp   前一个 tab
-:tabn   后一个 tab
+
+|||
+|---|---|
+|:tabnew [++opt选项] ［＋cmd］ 文件|      建立对指定文件新的tab
+|:tabc |  关闭当前的 tab
+|:tabo|   关闭所有其他的 tab
+|:tabs|   查看所有打开的 tab
+|:tabp|   前一个 tab
+|:tabn|   后一个 tab
 
 ### 标准模式下
-gT      前一个 tab
-gt      后一个 tab
-MacVim 还可以借助快捷键来完成 tab 的关闭、切换
-cmd+w   关闭当前的 tab
-cmd+{   前一个 tab
-cmd+}   后一个 tab
+
+|||
+|---|---|
+|gT  |    前一个 tab
+|gt  |    后一个 tab
+|MacVim |还可以借助快捷键来完成 tab 的关闭、切换
+|cmd+w  | 关闭当前的 tab
+|cmd+{|   前一个 tab
+|cmd+} |  后一个 tab
+
+
 NerdTree 在 .vimrc 中的常用配置
 
 #### 设置nerdtree宽度
