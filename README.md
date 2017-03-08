@@ -1,3 +1,19 @@
+## Install
+
+1.安装插件管理器vundle
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+2.准备vimrc文件
+
+使用myvim中的vimrc安装。将myvim中的vimrc文件放到家目录下并改名为.vimrc
+
+3.安装myvim
+```
+vim +PluginInstall +qall
+```
+
 ## 支持go的vim配置for mac
 
 ## usage nerdtree
