@@ -74,7 +74,7 @@ let NERDTreeShowBookmarks=1
 
 ### 切换标签页
 
-|||
+|命令|含义|
 |---|---|
 |:tabnew [++opt选项] ［＋cmd］ 文件|      建立对指定文件新的tab
 |:tabc |  关闭当前的 tab
@@ -85,7 +85,7 @@ let NERDTreeShowBookmarks=1
 
 ### 标准模式下
 
-|||
+|命令|含义|
 |---|---|
 |gT  |    前一个 tab
 |gt  |    后一个 tab
